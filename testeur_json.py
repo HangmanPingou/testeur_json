@@ -24,11 +24,11 @@ class testeur_json(QMainWindow):
         self.fichier_teste.lineEdit().setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.fichier_teste.setStyleSheet("font-size: 17px ; font-weight: bold")
 
-        self.bouton = QPushButton("TESTER", self.zone_centrale)
+        self.bouton = QPushButton("TESTER", self.zone_centrale) # Le bouton
         self.bouton.setGeometry(387.5, 90, 150, 40)
         self.bouton.setStyleSheet("background-color: blue ; border: 2px solid black ; border-radius: 75px 20px; font-size: 17px ; font-weight: bold")
 
-        self.resultat = QLabel("Le résultat sera afficher ici.", self.zone_centrale)
+        self.resultat = QLabel("Le résultat sera afficher ici.", self.zone_centrale) # Le label "RESULTAT"
         self.resultat.setGeometry(25, 165, 550, 60)
         self.resultat.setStyleSheet("background: #E35CF1")
         self.resultat.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
