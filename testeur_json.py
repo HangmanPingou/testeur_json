@@ -42,20 +42,17 @@ class testeur_json(QMainWindow):
         self.resultat.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.resultat.setStyleSheet("font-size: 17px ; background: #E1F1D5 ; font-style: italic ; font-weight: bold")
 
-    def test(self):
-        fichier = self.fichier_teste.currentText()
+    def test(self): # Méthode qui test la validité du fichier.
+        fichier = self.fichier_teste.currentText() # Récupère la valeur du comboBox donc le nom du fichier.
         try:
-            with open(f"test/{fichier}", "r") as f: # J'ouvre mon fichier et créé une variable (dictionnaire), puis j'ajoute un nouveau sous-dictionnaire
+            with open(f"test/{fichier}", "r") as f: # J'ouvre le fichier dans le TRY. Si ça fonctionne le fichier est valide.
                 essai = json.load(f)
                 f.close()
             self.resultat.setStyleSheet("font-size: 17px ; color: green ; font-style: italic ; font-weight: bold")
             self.resultat.setText("Le fichier est valide")
-        except:
+        except: # Sinon le fichier est invalide.
             self.resultat.setStyleSheet("font-size: 17px ; color: red ; font-style: italic ; font-weight: bold")
             self.resultat.setText("Le fichier n'est pas valide")
-
-
-
 
 
 app = QApplication()
