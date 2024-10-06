@@ -17,9 +17,9 @@ class testeur_json(QMainWindow):
         self.presentation.setStyleSheet("font-size: 17px ; background: #E1F1D5 ; font-style: italic ; font-weight: bold")
         self.presentation.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
 
-        self.liste_fichiers = []
-        self.repertoire_test = Path.cwd() / "test"
-        for i in self.repertoire_test.iterdir():
+        self.liste_fichiers = [] # Création de la liste utilisé dans le ComboBox
+        self.repertoire_test = Path.cwd() / "test" # Création de la variable Path qui contient l'adresse relative du script
+        for i in self.repertoire_test.iterdir(): # Je créé un itérable et je boucle pour incrémenter ma liste
             self.liste_fichiers.append(i.name)
 
         self.fichier_teste = QtWidgets.QComboBox(self.zone_centrale) # Le menu déroullant
